@@ -3,6 +3,7 @@ import sys
 import os
 import time
 
+
 def convert_hex(number: int) -> str:
     """Converts a given number to hexadecimal"""
     if number < 0:
@@ -18,6 +19,7 @@ def convert_hex(number: int) -> str:
         number //= 16
     return sign + hex_result
 
+
 def convert_binary(number: int) -> str:
     """Converts a given number to binary"""
     if number < 0:
@@ -32,6 +34,7 @@ def convert_binary(number: int) -> str:
         number //= 2
     return sign + binary_result
 
+
 def load_file(file_path: str) -> list[float]:
     """Loads the file of numbers given path"""
     file_numbers = []
@@ -44,13 +47,16 @@ def load_file(file_path: str) -> list[float]:
                 continue
     return file_numbers
 
-def create_file(file_path: str, write_results: list[str], delta_time: float) -> None:
+
+def create_file(file_path: str, write_results: list[str],
+                delta_time: float) -> None:
     """Creates a file with the same results shown in the terminal"""
     with open(file_path, 'w', encoding='utf-8') as file:
         file.write('Results\n')
         for single_result in write_results:
             file.write(single_result + '\n')
         file.write(f'Execution time was: {delta_time}')
+
 
 path = sys.argv[1]
 if len(sys.argv) > 1:
@@ -59,7 +65,8 @@ if len(sys.argv) > 1:
         numbers = load_file(path)
         results = []
         for num in numbers:
-            result = f'Decimal: {num}\t Bin: {convert_binary(num)}\t Hex: {convert_hex(num)}'
+            result = f'Decimal: {num}\t Bin: {convert_binary(num)}\t \
+                    Hex: {convert_hex(num)}'
             results.append(result)
             print(result)
         delta = round(time.time() - startTime, 4)

@@ -3,6 +3,7 @@ import sys
 import os
 import time
 
+
 def count_word(words: list[str]) -> dict[str, int]:
     """Returns a dictionary with word frequency of given list"""
     frequency_count = {}
@@ -13,6 +14,7 @@ def count_word(words: list[str]) -> dict[str, int]:
             frequency_count[word] = 1
     return frequency_count
 
+
 def load_file(file_path: str) -> list[str]:
     """Loads the file of words given path"""
     words = []
@@ -22,13 +24,16 @@ def load_file(file_path: str) -> list[str]:
             words.append(line.strip())
     return words
 
-def create_file(file_path: str, write_results: list[str], delta_time: float) -> None:
+
+def create_file(file_path: str, write_results: list[str],
+                delta_time: float) -> None:
     """Creates a file with the same results shown in the terminal"""
     with open(file_path, 'w', encoding='utf-8') as file:
         file.write('Results\n')
         for single_result in write_results:
             file.write(single_result + '\n')
         file.write(f'Execution time was: {delta_time}')
+
 
 path = sys.argv[1]
 if len(sys.argv) == 2:
