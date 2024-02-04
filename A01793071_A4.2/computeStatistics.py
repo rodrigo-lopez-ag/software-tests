@@ -73,10 +73,11 @@ if len(sys.argv) == 2:
         mode_value = mode(numbers)
         var_value = variance(numbers, mu_value)
         std = standard_deviation(var_value)
-        result = f'Count: {len(numbers)}\nMean: {mu_value}\nMedian: {median_value}\nMode: {mode_value}\nStandard Deviation: {std}\nVariance: {var_value}'
+        result = f'Count: {len(numbers)}\nMean: {mu_value}\nMedian: {median_value}\nMode: \
+            {mode_value}\nStandard Deviation: {std}\nVariance: {var_value}'
         delta = round(time.time() - startTime, 4)
         print(result)
-        create_file('StatisticsResults.txt', result, delta)        
+        create_file('StatisticsResults.txt', result, delta)
         print(f'Execution time: {delta}')
     else:
         print('Something went wrong trying to read the file')
