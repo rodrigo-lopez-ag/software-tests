@@ -1,0 +1,9 @@
+{
+  "customer": {
+    "name": "Rodrigo",
+    "lastName": "Lopez",
+    "age": 27,
+    "dateArrival": "07-05-2024",
+    "dateDeparture": "14-05-2024"
+  }
+}
